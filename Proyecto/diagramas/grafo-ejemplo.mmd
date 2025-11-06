@@ -1,0 +1,50 @@
+graph TD
+    %% Nodos (Usuarios) - Componente 1
+    pepe["@pepe"]
+    mazinger["@mazinger"]
+    juanc["@juanc"]
+    tuqui33["@tuqui33"]
+    xoxojaime["@xoxojaime"]
+    sancho23["@sancho23"]
+    terciopelo["@terciopelo"]
+    newageforever["@newageforever"]
+    
+    %% Nodos (Usuarios) - Componente 2
+    caribedoble["@caribedoble"]
+    africa["@africa"]
+    cipriano["@cipriano"]
+    totalfree["@totalfree"]
+    radiogaga["@radiogaga"]
+    
+    %% Relaciones del archivo ejemplo-red.txt
+    %% Componente 1: Ciclo principal
+    pepe --> mazinger
+    mazinger --> juanc
+    mazinger --> tuqui33
+    tuqui33 --> xoxojaime
+    xoxojaime --> pepe
+    juanc --> sancho23
+    sancho23 --> mazinger
+    sancho23 --> terciopelo
+    terciopelo --> juanc
+    terciopelo --> newageforever
+    terciopelo --> caribedoble
+    
+    %% Componente 2: Ciclo secundario
+    caribedoble --> africa
+    africa --> cipriano
+    cipriano --> totalfree
+    cipriano --> radiogaga
+    totalfree --> africa
+    totalfree --> radiogaga
+    radiogaga --> caribedoble
+    
+    %% Estilos para diferenciar componentes
+    classDef componente1 fill:#ff9999,stroke:#ff0000,stroke-width:2px,color:#000
+    classDef componente2 fill:#99ccff,stroke:#0066cc,stroke-width:2px,color:#000
+    classDef componente3 fill:#99ff99,stroke:#00cc00,stroke-width:2px,color:#000
+    
+    %% Aplicar estilos
+    class pepe,mazinger,juanc,tuqui33,xoxojaime,sancho23,terciopelo,newageforever componente1
+    class caribedoble,africa,cipriano,totalfree,radiogaga componente2
+

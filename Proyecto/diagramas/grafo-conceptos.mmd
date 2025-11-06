@@ -1,0 +1,30 @@
+graph TD
+    %% Conceptos básicos de grafo dirigido
+    A["Usuario A<br/>@alice"]
+    B["Usuario B<br/>@bob"]
+    C["Usuario C<br/>@charlie"]
+    D["Usuario D<br/>@diana"]
+    E["Usuario E<br/>@eve"]
+    
+    %% Relaciones de seguimiento
+    A --> B
+    A --> C
+    B --> D
+    C --> D
+    D --> E
+    E --> A
+    
+    %% Estilos
+    classDef usuario fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000
+    classDef relacion stroke:#ff6f00,stroke-width:3px
+    
+    class A,B,C,D,E usuario
+    
+    %% Anotaciones
+    A -.->|"A sigue a B"| B
+    A -.->|"A sigue a C"| C
+    B -.->|"B sigue a D"| D
+    C -.->|"C sigue a D"| D
+    D -.->|"D sigue a E"| E
+    E -.->|"E sigue a A"| E
+
